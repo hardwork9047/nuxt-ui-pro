@@ -77,7 +77,6 @@ const period = ref<Period>('daily')
           :period="period"
           :range="range"
         />
-
         <div class="grid lg:grid-cols-2 lg:items-start gap-8 mt-8">
           <!-- ~/components/home/HomeSales.vue -->
           <HomeSales />

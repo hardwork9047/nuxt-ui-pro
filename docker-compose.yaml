@@ -5,8 +5,8 @@ services:
     ports:
       - "3000:3000"
     command: npm run dev
-    # volumes:
-    #   - ./src:/app
+    volumes:
+      - ./src:/app
     # restart: always
     networks:
       mynetwork:
