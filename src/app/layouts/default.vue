@@ -51,6 +51,15 @@ const links = [{
     text: 'Settings',
     shortcuts: ['G', 'S']
   }
+}, {
+  id: 'new',
+  label: 'New',
+  icon: 'i-heroicons-user-group',
+  to: '/new',
+  tooltip: {
+    text: 'New',
+    shortcuts: ['G', 'N']
+  }
 }]
 
 const footerLinks = [{

@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y iputils-ping traceroute
 
 COPY ../src .
 
+RUN rm -rf .nuxt node_modules
 RUN npm install --vervose
 
 EXPOSE 3000
