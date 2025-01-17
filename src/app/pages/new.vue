@@ -80,6 +80,7 @@ defineShortcuts({
       <NewDropdown />
       <NewLine />
       <NewBackGround />
+      <NewLine />
     </UDashboardPanel>
   </UDashboardPage>
 </template>
