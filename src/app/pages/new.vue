@@ -81,6 +81,7 @@ defineShortcuts({
       <NewLine />
       <NewBackGround />
       <NewLine />
+      <NewPixiJS />
     </UDashboardPanel>
   </UDashboardPage>
 </template>
