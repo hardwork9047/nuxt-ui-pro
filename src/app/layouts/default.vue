@@ -54,7 +54,7 @@ const links = [{
 }, {
   id: 'new',
   label: 'New',
-  icon: 'i-heroicons-user-group',
+  icon: 'meteor-icons:leaf',
   to: '/new',
   tooltip: {
     text: 'New',

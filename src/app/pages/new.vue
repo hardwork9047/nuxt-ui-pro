@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import NewBackGround from '~/components/new/NewBackGround.vue'
+import NewDropdown from '~/components/new/NewDropdown.vue'
+import NewGrid from '~/components/new/NewGrid.vue'
+import NewLine from '~/components/new/NewLine.vue'
 import type { User } from '~/types'
 
 const defaultColumns = [{
@@ -66,81 +70,16 @@ defineShortcuts({
 </script>
 
 <template>
-  <UDashboardPage>
-    <UDashboardPanel grow>
-      <UDashboardNavbar
-        title="New Pages"
-        :badge="users.length"
-      >
-        <template #right>
-          <UInput
-            ref="input"
-            v-model="q"
-            icon="i-heroicons-funnel"
-            autocomplete="off"
-            placeholder="Filter users..."
-            class="hidden lg:block"
-            @keydown.esc="$event.target.blur()"
-          >
-            <template #trailing>
-              <UKbd value="/" />
-            </template>
-          </UInput>
+  <UDashboardPage class="h-screen flex">
+    <UDashboardPanel grow class="h-full overflow-y-auto p-4">
 
-          <UButton
-            label="New user"
-            trailing-icon="i-heroicons-plus"
-            color="gray"
-            @click="isNewUserModalOpen = true"
-          />
-        </template>
-      </UDashboardNavbar>
-
-      <UDashboardToolbar>
-        <template #left>
-          <USelectMenu
-            v-model="selectedStatuses"
-            icon="i-heroicons-check-circle"
-            placeholder="Status"
-            multiple
-            :options="defaultStatuses"
-            :ui-menu="{ option: { base: 'capitalize' } }"
-          />
-          <USelectMenu
-            v-model="selectedLocations"
-            icon="i-heroicons-map-pin"
-            placeholder="Location"
-            :options="defaultLocations"
-            multiple
-          />
-        </template>
-
-        <template #right>
-          <USelectMenu
-            v-model="selectedColumns"
-            icon="i-heroicons-adjustments-horizontal-solid"
-            :options="defaultColumns"
-            multiple
-            class="hidden lg:block"
-          >
-            <template #label>
-              Display
-            </template>
-          </USelectMenu>
-        </template>
-      </UDashboardToolbar>
-
-      <UDashboardModal
-        v-model="isNewUserModalOpen"
-        title="New user"
-        description="Add a new user to your database"
-        :ui="{ width: 'sm:max-w-md' }"
-      >
-        <!-- ~/components/users/UsersForm.vue -->
-        <NewUsersForm @close="isNewUserModalOpen = false" />
-      </UDashboardModal>
-
-      <NewRequest></NewRequest>
+      <NewRequest />
+      <NewLine />
+      <NewGrid />
+      <NewLine />
+      <NewDropdown />
+      <NewLine />
+      <NewBackGround />
     </UDashboardPanel>
   </UDashboardPage>
 </template>
