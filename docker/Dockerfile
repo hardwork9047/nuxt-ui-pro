@@ -1,5 +1,5 @@
 # Node.jsのイメージを使用
-FROM node:latest
+FROM node:23.6
 
 # 作業ディレクトリを設定
 WORKDIR /app

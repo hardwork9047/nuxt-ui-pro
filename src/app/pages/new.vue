@@ -81,7 +81,18 @@ defineShortcuts({
       <NewLine />
       <NewBackGround />
       <NewLine />
-      <NewPixiJS />
+      <NewPixiJS6 />
+      <NewLine />
+      <NewPixiJS6_2 />
+      <!-- <NewPixiJS7 /> -->
+      <NewLine />
+      <!-- <NewPixiJS8 /> -->
+      <NewLine />
+      <NewCanvas />
+      <NewLine />
+      <NewCanvasAnimation />
+      <NewLine />
+      <NewCanvasReactive />
     </UDashboardPanel>
   </UDashboardPage>
 </template>

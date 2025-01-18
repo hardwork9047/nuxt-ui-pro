@@ -50,5 +50,8 @@ export default defineNuxtConfig({
   devServer: {
     host: '0.0.0.0', // 外部アクセスを許可
     port: 3000       // 使用するポート（必要に応じて変更可能）
-  }
+  },
+  plugins: [
+    'plugins/pixi'
+  ]
 })
