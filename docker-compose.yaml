@@ -5,6 +5,7 @@ services:
     ports:
       - "3000:3000"
     command: npm run dev
+    # command: ping 127.0.0.1
     volumes:
       - ./src:/app
     restart: always

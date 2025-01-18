@@ -3,6 +3,8 @@ import NewBackGround from '~/components/new/NewBackGround.vue'
 import NewDropdown from '~/components/new/NewDropdown.vue'
 import NewGrid from '~/components/new/NewGrid.vue'
 import NewLine from '~/components/new/NewLine.vue'
+import NewPixiJS7mod from '~/components/new/NewPixiJS7mod.vue'
+import NewPixiJS7modAnimation from '~/components/new/NewPixiJS7modAnimation.vue'
 import type { User } from '~/types'
 
 const defaultColumns = [{
@@ -81,11 +83,13 @@ defineShortcuts({
       <NewLine />
       <NewBackGround />
       <NewLine />
-      <NewPixiJS6 />
-      <NewLine />
-      <NewPixiJS6_2 />
+      <!-- <NewPixiJS6 /> -->
+      <!-- <NewLine /> -->
+      <!-- <NewPixiJS6_2 /> -->
       <!-- <NewPixiJS7 /> -->
+      <NewPixiJS7mod />
       <NewLine />
+      <NewPixiJS7modAnimation />
       <!-- <NewPixiJS8 /> -->
       <NewLine />
       <NewCanvas />
