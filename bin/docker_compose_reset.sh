@@ -2,7 +2,7 @@
 
 # Docker Compose を停止
 docker compose down
-docker build -f docker/Dockerfile -t nuxt .
+# docker build -f docker/Dockerfile -t nuxt .
 
 # .nuxt ディレクトリを削除
 sudo rm -rf src/.nuxt/
@@ -12,9 +12,9 @@ sudo rm -rf src/node_modules/*
 docker compose up -d
 
 # 120秒間待機（プログレスバー付き）
-echo -ne "Waiting for 80 seconds to ensure containers are fully up...\n"
+echo -ne "Waiting for 100 seconds to ensure containers are fully up...\n"
 
-duration=80
+duration=100
 bar_length=40  # プログレスバーの長さ（50文字）
 
 for ((i=0; i<=duration; i++)); do
