@@ -60,6 +60,65 @@ const links = [{
     text: 'New',
     shortcuts: ['G', 'N']
   }
+}, {
+  id: 'tri',
+  label: 'TRI',
+  icon: 'meteor-icons:leaf',
+  to: '/tri',
+  children: [{
+    label: '計算自動化ツール',
+    to: '/settings',
+    exact: true
+  }, {
+    label: '経路計画(TRI path planner)',
+    to: '/settings/members'
+  }, {
+    label: '3次元最適化',
+    to: '/settings/notifications'
+  }],
+  tooltip: {
+    text: 'New',
+    shortcuts: ['T', 'R']
+  }
+}, {
+  id: 'flexsim',
+  label: 'FlexSim',
+  icon: 'meteor-icons:leaf',
+  to: '/flexsim',
+  children: [{
+    label: 'WCS連携PG',
+    to: '/settings',
+    exact: true
+  }, {
+    label: '間口数検証',
+    to: '/settings/notifications'
+  }, {
+    label: 'Optuna検証',
+    to: '/settings/notifications'
+  }],
+
+  tooltip: {
+    text: 'FlexSim',
+    shortcuts: ['F', 'S']
+  }
+}, {
+  id: 'takaoka',
+  label: '高岡01',
+  icon: 'meteor-icons:leaf',
+  to: '/takaoka',
+  tooltip: {
+    text: '高岡01',
+    shortcuts: ['T', 'A']
+  }
+}, {
+  id: 'motomachi',
+  label: '元町GPC',
+  icon: 'meteor-icons:leaf',
+  to: '/motomachi',
+  tooltip: {
+    text: '元町GPC',
+    shortcuts: ['M', 'O']
+  }
 }]
 
 const footerLinks = [{

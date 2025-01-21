@@ -1,4 +1,5 @@
 <template>
+  <h1 class="text-2xl font-bold mb-4">Canvas Reactive</h1>
   <div>
     <!-- <button @click="drawCircle">円を描く</button> -->
     <UButton

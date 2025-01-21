@@ -1,4 +1,5 @@
 <template>
+  <h1 class="text-2xl font-bold mb-4">Canvas Animation</h1>
   <canvas ref="myCanvas" width="400" height="300"></canvas>
 </template>
 

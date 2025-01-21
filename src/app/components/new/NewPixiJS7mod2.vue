@@ -1,5 +1,4 @@
 <template>
-  <h1 class="text-2xl font-bold mb-4">PixiJS 7 Sample</h1>
   <div ref="pixiContainer" class="pixi-container"></div>
 </template>
 
@@ -16,54 +15,74 @@ onMounted(async () => {
   const app = new Application({
     width: 800,
     height: 600,
-    backgroundColor: 0x1099bb, // 修正：background.color ではなく backgroundColor
+    backgroundColor: 0x1099bb,
   })
 
   if (pixiContainer.value) {
     console.log("✅ Pixi コンテナに canvas を追加")
-    pixiContainer.value.appendChild(app.view) // 修正: app.view を使う
+    pixiContainer.value.appendChild(app.view)
   } else {
     console.error("❌ Pixi コンテナが見つかりません")
     return
   }
 
-  // 🎨 四角形を描画
+  // 🎨 四角形（左右移動）
   const rectangle = new Graphics()
-  rectangle.beginFill(0xff0000) // 赤色
-  rectangle.drawRect(100, 100, 200, 150) // x, y, width, height
+  rectangle.beginFill(0xff0000)
+  rectangle.drawRect(0, 0, 200, 150) // x, y, width, height
   rectangle.endFill()
+  rectangle.x = 100
+  rectangle.y = 200
   app.stage.addChild(rectangle)
 
-  console.log("✅ 四角形が追加されました")
+  let rectSpeedX = 2
 
-  // 🎨 円を描画
+  // 🎨 円（上下バウンド）
   const circle = new Graphics()
-  circle.beginFill(0x00ff00) // 緑色
-  circle.drawCircle(500, 300, 80) // x, y, radius
+  circle.beginFill(0x00ff00)
+  circle.drawCircle(0, 0, 80)
   circle.endFill()
+  circle.x = 500
+  circle.y = 300
   app.stage.addChild(circle)
 
-  console.log("✅ 円が追加されました")
+  let circleSpeedY = 3
 
-  // 画像のロード状況を監視（PixiJS 7 では非同期読み込みが推奨）
+  // 🎭 スプライト（画像・回転）
+  let sprite = null
   try {
     const texture = await Assets.load('/images/image.png')
-    if (!texture) {
-      throw new Error("画像のロードに失敗しました（テクスチャが null）")
-    }
-
-    console.log("✅ 画像が正常にロードされました")
-
-    const sprite = new Sprite(texture)
+    sprite = new Sprite(texture)
     sprite.anchor.set(0.5)
     sprite.x = app.screen.width / 2
     sprite.y = app.screen.height / 2
+    sprite.scale.set(0.5)
     app.stage.addChild(sprite)
 
     console.log("✅ スプライトがステージに追加されました:", sprite)
   } catch (error) {
     console.error("❌ 画像のロードに失敗しました。パスを確認してください:", '/images/image.png', error)
   }
+
+  // 🎬 アニメーションループ
+  app.ticker.add(() => {
+    // 四角形を左右に移動
+    rectangle.x += rectSpeedX
+    if (rectangle.x <= 0 || rectangle.x + 200 >= app.screen.width) {
+      rectSpeedX *= -1 // 端で反転
+    }
+
+    // 円を上下にバウンド
+    circle.y += circleSpeedY
+    if (circle.y - 80 <= 0 || circle.y + 80 >= app.screen.height) {
+      circleSpeedY *= -1 // 端で反転
+    }
+
+    // スプライトを回転
+    if (sprite) {
+      sprite.rotation += 0.03
+    }
+  })
 })
 </script>
 

@@ -1,4 +1,5 @@
 <template>
+  <h1 class="text-2xl font-bold mb-4">PixiJS 7 Animation</h1>
   <div ref="pixiContainer" class="pixi-container"></div>
 </template>
 
